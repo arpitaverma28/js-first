@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+  .dv{
+    height: 100px;
+    width: 200px;
+    color: bisque;
+    background-color: aquamarine;
+    margin-bottom: 10px;
+  }
+    </style>
+</head>
+<body>
+    <div class="dv" >
+       
+    </div>
+     <button id="b1">click me 1!</button>
+        
+        <button id="b2">click me 2!</button>
+
+        <script>
+            let btn1 = document.querySelector("#b1");
+            btn1.onclick =()=>{
+                console.log("button one is clicked!");
+                alert("hello button one!");
+            }
+
+            let div = document.querySelector(".dv");
+            div.onmouseover =(e) =>{
+               console.log("You are inside div!")
+                console.log(e.type)
+                div.style.backgroundColor = "pink";
+            }
+           let btn2 = document.querySelector("#b2");
+
+           btn2.addEventListener("click",(e) =>{
+            console.log("Button two was chicked-1 !")
+           // console.log(e)
+           });
+
+            const two=() =>{
+            console.log("Button two was chicked-2 !")
+           }
+        
+            btn2.addEventListener("click",two);
+
+             btn2.removeEventListener("click",two);
+
+        </script>
+    
+</body>
+</html>
+<!-- 
+Event Handling = Listening to user actions and responding with JavaScript.
+inline hndle < .js handle 
+Event Object = An object that stores information about the event that occurred.
+
+2️⃣ Important Properties of Event Object
+Property	                           Meaning
+event.target	                The element that triggered the event
+event.type	                    Type of event (click, keydown, etc.)
+event.clientX	                Mouse X position
+event.clientY	                Mouse Y position
+event.key	                    Key pressed
+event.preventDefault()      	Prevent default behavior
+
+
+Event Listener = Wait for an event → then execute code
+You can attach many listeners to the same element.
+-->
